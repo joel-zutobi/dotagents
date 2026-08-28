@@ -1,0 +1,7 @@
+# Cached clones of upstream skill-source repos, managed by the skills CLI.
+# Fully re-downloadable; contain nested .git dirs that must not be tracked.
+external/
+
+# OS noise
+.DS_Store
+Thumbs.db
