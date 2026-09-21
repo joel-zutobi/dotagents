@@ -15,6 +15,14 @@ Read recorded decisions, authorizations, and deferrals before repeating a questi
 For a small direct request, the request and a short effort record can be enough;
 do not invent a specification or ticket graph.
 
+Before implementation on a branch, unless the owner explicitly pins an exact
+commit, check for its corresponding remote branch and pull the latest commit
+with `git pull --ff-only`. Use its configured upstream; otherwise identify the
+same-named branch on the assigned remote. A new local-only branch has nothing
+to pull. Preserve local edits and commits; if a pull is blocked, work from the
+remote in a clean worktree or reconcile within assigned Git ownership. If the
+remote is unavailable, report the stale-base risk before proceeding.
+
 ## Make decisions within authority
 
 Decision policy defaults to `agent-led`. An explicit task instruction overrides
