@@ -60,9 +60,20 @@ support for legacy behavior.
 
 ## Keep implementation proportional
 
+- Reuse before creating. Search for existing shared and platform-native
+  components or helpers and inspect their callers. Reuse a suitable equivalent;
+  extend it for a concrete requirement only when the shared abstraction remains
+  coherent. Create a separate implementation when reuse would compromise
+  behavior or maintainability, and record that reason. Keep unrelated
+  consolidation outside the task.
 - Prefer the smallest adequate implementation and follow existing patterns.
   Before adding custom infrastructure, explain why an existing tool or bounded
   manual fallback is insufficient. This explanation is not a new approval gate.
+- Write user-facing copy for a user decision or consequence. Keep a helper,
+  status, or error message when it helps the user act, understand the outcome,
+  or recognize a material data, privacy, or payment effect. Keep routine backend
+  cleanup and diagnostics out of product copy. Pending background work is a
+  pending state unless it creates a real user-visible failure.
 - Keep the patch within the agreed scope. Record unrelated findings separately.
 - For testable behavior and regressions, establish a meaningful failing check,
   make it pass, and refactor while it stays green. Use visual evidence for
