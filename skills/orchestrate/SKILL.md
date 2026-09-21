@@ -102,6 +102,15 @@ an uncovered required configuration, or an explicit gate. Preserve the original
 SHA of reused evidence and explain applicability. Repeated failure without new
 evidence calls for bounded diagnosis, not identical retries.
 
+After a broad verification profile passes, classify each later diff before
+rerunning it. Runtime, build setting, package, resource, manifest, toolchain, or
+verification-infrastructure changes rerun the affected gates; repeat the full
+profile when several gates or the shared build/release graph changed, or the
+invalidated scope is uncertain. Test-only corrections run the changed tests and
+affected suite unless they alter a shared harness or reveal a broader product
+failure. Prose, comments, and tracker-only edits preserve runtime evidence. Record
+the passing commit and show that the later diff stays within the claimed class.
+
 Separate release artifacts from development verification when the platform
 requires it. Reuse release-configuration coverage when project rules allow.
 Keep unavailable credentials, physical-device checks, provider evidence, and
