@@ -48,12 +48,15 @@ Start from these templates and fill them from the inspected project:
   settings/tracker pointers, and ownership of the adopted workflow.
 - [project.md](../../templates/project/docs/agents/project.md): only real project
   differences, including decision policy and any model-research overrides.
-- [issue-tracker.md](../../templates/project/docs/agents/issue-tracker.md): local
-  Markdown starter when the project has no existing tracker convention.
+- [issue-tracker-github.md](../../templates/project/docs/agents/issue-tracker-github.md):
+  GitHub Issues starter, copied to `docs/agents/issue-tracker.md`.
+- [issue-tracker-local.md](../../templates/project/docs/agents/issue-tracker-local.md):
+  Git-tracked Markdown starter for projects without a hosted tracker.
 
 Preserve an existing tracker. When none is configured and no owner preference
-exists, use the Git-tracked Markdown starter; it needs no external account.
-Record that choice. For an existing tracker, keep its operations and identify
+exists, use GitHub Issues when the project is hosted on GitHub and `gh` can reach
+it; otherwise use the Git-tracked Markdown starter, which needs no external
+account. Record that choice. For an existing tracker, keep its operations and identify
 where durable decisions, authorizations, and evidence belong. Do not require
 `.scratch` for projects that use another durable tracker.
 
